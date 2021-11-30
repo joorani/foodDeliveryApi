@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class RestaurantDto {
     @NotBlank
     private String name;

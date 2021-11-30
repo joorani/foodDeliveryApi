@@ -3,9 +3,7 @@ package com.example.fooddeliveryapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -344,6 +342,8 @@ class RestaurantIntegrationTest {
 
     @Getter
     @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     @Builder
     static class RestaurantDto {
         private Long id;

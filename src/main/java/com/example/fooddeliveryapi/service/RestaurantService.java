@@ -3,13 +3,11 @@ package com.example.fooddeliveryapi.service;
 import com.example.fooddeliveryapi.dto.RestaurantDto;
 import com.example.fooddeliveryapi.model.Restaurant;
 import com.example.fooddeliveryapi.repository.RestaurantRepository;
-import com.example.fooddeliveryapi.validater.RestaurantValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -17,8 +15,6 @@ import javax.transaction.Transactional;
 public class RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
-    private final RestaurantValidator restaurantValidator;
-
 
     @Transactional
     public Restaurant registerRestaurant(RestaurantDto restaurantDto) {
@@ -42,5 +38,10 @@ public class RestaurantService {
         Restaurant newRestaurant = new Restaurant(restaurantDto);
         return restaurantRepository.save(newRestaurant);
 
+
+    }
+
+    public List<Restaurant> getRestaurants() {
+        return restaurantRepository.findAll();
     }
 }
