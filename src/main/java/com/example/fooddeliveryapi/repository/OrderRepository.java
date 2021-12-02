@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
 
     Restaurant findByRestaurantId(Long restaurantId);
+
 }

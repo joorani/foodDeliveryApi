@@ -1,5 +1,6 @@
 package com.example.fooddeliveryapi.dto;
 
+import com.example.fooddeliveryapi.model.FoodOrderEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,9 +13,9 @@ public class FoodOrderResponseDto {
     private int quantity;
     private int price;
 
-    public FoodOrderResponseDto(String name, int foodOrderPrice, int foodOrderQuantity) {
-        this.name = name;
-        this.price = foodOrderPrice;
-        this.quantity = foodOrderQuantity;
+    public FoodOrderResponseDto(FoodOrderEntity entity) {
+        this.name = entity.getName();
+        this.quantity = entity.getQuantity();
+        this.price = entity.getPrice();
     }
 }

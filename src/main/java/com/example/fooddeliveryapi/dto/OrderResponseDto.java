@@ -1,5 +1,6 @@
 package com.example.fooddeliveryapi.dto;
 
+import com.example.fooddeliveryapi.model.OrderEntity;
 import lombok.*;
 
 import java.util.List;
@@ -9,19 +10,17 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderResponseDto {
     private String restaurantName;
-    private List<FoodOrderResponseDto> FoodOrdersInfo;
+    private List<FoodOrderResponseDto> foods;
     private int deliveryFee;
     private int totalPrice;
 
 
-    public OrderResponseDto(String restaurantName,
-                            List<FoodOrderResponseDto> foodOrdersInfo,
-                            int deliveryFee,
-                            int totalPrice) {
-        this.restaurantName = restaurantName;
-        FoodOrdersInfo = foodOrdersInfo;
-        this.deliveryFee = deliveryFee;
-        this.totalPrice = totalPrice;
+
+    public OrderResponseDto(OrderEntity orderEntity, List<FoodOrderResponseDto> foodOrderResponseDtoList) {
+        this.restaurantName = orderEntity.getRestaurantName();
+        this.foods= foodOrderResponseDtoList;
+        this.deliveryFee = orderEntity.getDeliveryFee();
+        this.totalPrice = orderEntity.getTotalPrice();
     }
 
 }

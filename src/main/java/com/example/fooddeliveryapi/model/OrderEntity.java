@@ -23,7 +23,7 @@ public class OrderEntity {
 
     private int deliveryFee;
 
-    @OneToMany
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "FOOD_ORDER_ID")
     private List<FoodOrderEntity> foodOrderEntityList;
 
@@ -31,9 +31,9 @@ public class OrderEntity {
     @JoinColumn(name = "RESTAURANT_ID")
     private Restaurant restaurant;
 
-    @ManyToOne
-    @JoinColumn(name = "Food_ID")
-    private Food food;
+//    @ManyToOne
+//    @JoinColumn(name = "Food_ID")
+//    private Food food;
 
     public OrderEntity(String restaurantName,
                        List<FoodOrderEntity> foodOrderEntityList,
@@ -43,6 +43,6 @@ public class OrderEntity {
         this.restaurantName = restaurantName;
         this.foodOrderEntityList = foodOrderEntityList;
         this.deliveryFee = deliveryFee;
-        this.totalPrice = totalPrice;
+        this.totalPrice = totalPrice ;
     }
 }

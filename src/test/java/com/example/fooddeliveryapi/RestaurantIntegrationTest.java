@@ -342,8 +342,8 @@ class RestaurantIntegrationTest {
 
     @Getter
     @Setter
-    @AllArgsConstructor
     @NoArgsConstructor
+    @AllArgsConstructor
     @Builder
     static class RestaurantDto {
         private Long id;

@@ -25,8 +25,8 @@ public class OrderController {
 
     // 주문 요청
     @PostMapping("/order/request")
-    public OrderResponseDto registerOrder(@RequestBody OrderRequestDto orderRequestDto) {
-        return orderService.registerOrder(orderRequestDto);
+    public OrderResponseDto orderFood(@RequestBody OrderRequestDto orderRequestDto) {
+        return orderService.orderFood(orderRequestDto);
     }
 
     // 주문 조회
