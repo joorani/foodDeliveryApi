@@ -1,7 +1,6 @@
 package com.example.fooddeliveryapi.model;
 
 import com.example.fooddeliveryapi.dto.RestaurantDto;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,6 +26,9 @@ public class Restaurant {
 
     @Column(nullable = false)
     private int deliveryFee;
+
+    @OneToMany(mappedBy = "restaurant")
+    private List<OrderEntity> orderEntities = new ArrayList<>();
 
     public Restaurant(RestaurantDto restaurantDto) {
         this.name = restaurantDto.getName();

@@ -12,11 +12,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 public class RestaurantDto {
-    @NotBlank
     private String name;
-    @NotBlank
     private int minOrderPrice;
-    @NotBlank
     private int deliveryFee;
 
 }

@@ -172,7 +172,7 @@ class RestaurantIntegrationTest {
 
     @Nested
     @DisplayName("최소주문 가격")
-    class MinOrderPrice {
+    class MinOrderEntityPrice {
         @Test
         @DisplayName("1,000원 미만 에러")
         void test1() throws JsonProcessingException {
