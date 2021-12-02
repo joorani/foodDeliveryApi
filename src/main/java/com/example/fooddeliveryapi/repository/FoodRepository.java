@@ -6,8 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+@Repository
 public interface FoodRepository extends JpaRepository<Food, Long> {
-    boolean existsByNameAndRestaurantId(String name, Long restaurantId);
+    boolean existsByNameAndRestaurant_Id(String name, Long restaurantId);
 
     List<Food> findAllByRestaurantId(Long restaurantId);
 }

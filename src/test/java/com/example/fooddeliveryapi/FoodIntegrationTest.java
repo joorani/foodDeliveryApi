@@ -431,8 +431,8 @@ class FoodIntegrationTest {
 
     @Getter
     @Setter
-    @AllArgsConstructor
     @NoArgsConstructor
+    @AllArgsConstructor
     @Builder
     static class RestaurantDto {
         private Long id;
@@ -443,8 +443,8 @@ class FoodIntegrationTest {
 
     @Getter
     @Setter
-    @AllArgsConstructor
     @NoArgsConstructor
+    @AllArgsConstructor
     @Builder
     static class FoodDto {
         private Long id;

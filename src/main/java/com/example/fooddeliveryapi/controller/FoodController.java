@@ -1,7 +1,7 @@
 package com.example.fooddeliveryapi.controller;
 
-import com.example.fooddeliveryapi.dto.FoodDto;
-import com.example.fooddeliveryapi.model.Food;
+import com.example.fooddeliveryapi.dto.FoodRequestDto;
+import com.example.fooddeliveryapi.dto.FoodResponseDto;
 import com.example.fooddeliveryapi.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +20,13 @@ public class FoodController {
 
     // 음식리스트 등록
     @PostMapping("/restaurant/{restaurantId}/food/register")
-    public void registerFood(@PathVariable Long restaurantId, @RequestBody List<FoodDto> foodDtoList) {
-       foodService.addFoods(restaurantId, foodDtoList);
+    public void registerFood(@PathVariable Long restaurantId, @RequestBody List<FoodRequestDto> foodRequestDtoList) {
+       foodService.addFoods(restaurantId, foodRequestDtoList);
     }
 
     //메뉴판 조회
     @GetMapping("restaurant/{restaurantId}/foods")
-    public List<Food> getMenus(@PathVariable Long restaurantId) {
+    public List<FoodResponseDto> getMenus(@PathVariable Long restaurantId) {
         return foodService.getMenus(restaurantId);
     }
 
