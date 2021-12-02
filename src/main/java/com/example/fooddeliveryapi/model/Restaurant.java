@@ -1,21 +1,22 @@
 package com.example.fooddeliveryapi.model;
 
-import com.example.fooddeliveryapi.dto.RestaurantDto;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.fooddeliveryapi.dto.RestaurantRequestDto;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+@AllArgsConstructor
+@Builder
 public class Restaurant {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "RESTAURANT_ID")
     private Long id;
 
     @Column(nullable = false)
@@ -30,10 +31,9 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant")
     private List<OrderEntity> orderEntities = new ArrayList<>();
 
-    public Restaurant(RestaurantDto restaurantDto) {
-        this.name = restaurantDto.getName();
-        this.minOrderPrice = restaurantDto.getMinOrderPrice();
-        this.deliveryFee = restaurantDto.getDeliveryFee();
+    public Restaurant(RestaurantRequestDto restaurantRequestDto) {
+        this.name = restaurantRequestDto.getName();
+        this.minOrderPrice = restaurantRequestDto.getMinOrderPrice();
+        this.deliveryFee = restaurantRequestDto.getDeliveryFee();
     }
-
 }
