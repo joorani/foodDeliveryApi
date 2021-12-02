@@ -19,18 +19,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'mysql:mysql-connector-java'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.6'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    runtimeOnly 'com.h2database:h2:1.4.200'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.25'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
     implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.6'
-    implementation('org.hibernate.validator:hibernate-validator:6.1.2.Final')
+    implementation('org.hibernate.validator:hibernate-validator:7.0.1.Final')
     // 테스트 코드를 위한 Lombok 라이브러리
-    testCompileOnly 'org.projectlombok:lombok:1.18.12'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor('org.projectlombok:lombok:1.18.22')
 }
 
 test {
